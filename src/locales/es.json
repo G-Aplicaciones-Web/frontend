@@ -27,5 +27,19 @@
   "connect": "Conectar",
   "disconnect": "Desconectar",
   "change_success": "¡Se ha realizado el cambio exitosamente!"
-}
+},
+  "profile": {
+    "company_title": "Perfil Empresa",
+    "technician_title": "Perfil Técnico",
+    "username": "Usuario",
+    "email": "Correo electrónico",
+    "plan": "Plan",
+    "plan_days_left": "Días restantes del plan",
+    "name": "Nombre",
+    "time_with_us": "Tiempo con nosotros",
+    "delete_account": "Eliminar cuenta",
+    "account_deleted": "¡Cuenta eliminada exitosamente!",
+    "contact_support": "Contactar soporte",
+    "contact_support_alert": "¡Soporte contactado exitosamente!"
+  }
 }
