@@ -28,6 +28,20 @@
     "connect": "Connect",
     "disconnect": "Disconnect",
     "change_success": "Change has been successfully made!"
+  },
+  "profile": {
+    "company_title": "Company Profile",
+    "technician_title": "Technician Profile",
+    "username": "Username",
+    "email": "Email",
+    "plan": "Plan",
+    "plan_days_left": "Days Left on Plan",
+    "name": "Name",
+    "time_with_us": "Time with Us",
+    "delete_account": "Delete Account",
+    "account_deleted": "Account successfully deleted!",
+    "contact_support": "Contact Support",
+    "contact_support_alert": "Support contacted successfully!"
   }
 
 }
