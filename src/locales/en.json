@@ -2,8 +2,8 @@
   "navbar": {
     "home": "Home",
     "devices": "Devices",
-    "profile_company": "My Profile | Companies",
-    "profile_technician": "My Profile | Technicians",
+    "profile_company": "My Profile / Companies",
+    "profile_technician": "My Profile / Technicians",
     "logout": "Log Out",
     "language_en": "EN",
     "language_es": "ES"

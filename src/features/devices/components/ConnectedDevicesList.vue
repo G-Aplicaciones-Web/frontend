@@ -16,7 +16,6 @@
 </template>
 
 <script setup>
-import {$t} from "@primeuix/styled";
 
 const props = defineProps({
   devices: {

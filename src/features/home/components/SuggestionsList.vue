@@ -10,14 +10,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
-import {$t} from "@primeuix/styled";
 
 const { t } = useI18n()
 
-// Mock suggestions
-const suggestions = ref([
+// Hacer las sugerencias reactivas usando computed
+const suggestions = computed(() => [
   t('home.suggestion_1'),
   t('home.suggestion_2'),
   t('home.suggestion_3')

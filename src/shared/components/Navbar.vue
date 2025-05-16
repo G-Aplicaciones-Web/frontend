@@ -1,15 +1,43 @@
 <template>
   <nav class="navbar">
     <ul class="nav-links">
-      <li><router-link to="/">{{ $t('navbar.home') }}</router-link></li>
-      <li><router-link to="/devices">{{ $t('navbar.devices') }}</router-link></li>
-      <li><router-link to="/profile/company">{{ $t('navbar.profile_company') }}</router-link></li>
-      <li><router-link to="/profile/technician">{{ $t('navbar.profile_technician') }}</router-link></li>
+      <li>
+        <router-link to="/" custom v-slot="{ navigate, isActive }">
+          <a
+              :class="{ 'active-link': isActive }"
+              @click="navigate"
+          >{{ $t('navbar.home') }}</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/devices" custom v-slot="{ navigate, isActive }">
+          <a
+              :class="{ 'active-link': isActive }"
+              @click="navigate"
+          >{{ $t('navbar.devices') }}</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/profile/company" custom v-slot="{ navigate, isActive }">
+          <a
+              :class="{ 'active-link': isActive }"
+              @click="navigate"
+          >{{ $t('navbar.profile_company') }}</a>
+        </router-link>
+      </li>
+      <li>
+        <router-link to="/profile/technician" custom v-slot="{ navigate, isActive }">
+          <a
+              :class="{ 'active-link': isActive }"
+              @click="navigate"
+          >{{ $t('navbar.profile_technician') }}</a>
+        </router-link>
+      </li>
     </ul>
 
     <div class="nav-actions">
       <button
-          :class="{ active: currentLocale === 'es' }"
+          :class="{ active: locale === 'es' }"
           @click="changeLocale('es')"
           aria-label="Change language to Spanish"
       >
@@ -17,7 +45,7 @@
       </button>
 
       <button
-          :class="{ active: currentLocale === 'en' }"
+          :class="{ active: locale === 'en' }"
           @click="changeLocale('en')"
           aria-label="Change language to English"
       >
@@ -32,15 +60,13 @@
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import { useI18n } from 'vue-i18n'
 
-const { locale } = useI18n()
-const currentLocale = ref(locale.value)
+import { useI18n } from 'vue-i18n'
+const { t, locale } = useI18n()
+
 
 function changeLocale(lang) {
   locale.value = lang
-  currentLocale.value = lang
 }
 
 function logout() {
@@ -66,14 +92,17 @@ function logout() {
   font-weight: 600;
   font-size: 1rem;
   color: #000;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
 }
 
-.nav-links li a.router-link-active {
+.active-link {
   color: #328e6e;
   font-weight: 700;
 }

@@ -16,4 +16,5 @@ const router = createRouter({
     routes
 })
 
+// ESTA LÍNEA ES CLAVE:
 export default router
