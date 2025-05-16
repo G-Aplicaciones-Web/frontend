@@ -1,15 +1,17 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
-import { resolve, dirname } from 'path'
-import { fileURLToPath } from 'url'
+import { createI18n } from 'vue-i18n'
+import en from './locales/en.json'
+import es from './locales/es.json'
 
-export default defineConfig({
-    plugins: [
-        vue(),
-        VueI18nPlugin({
-            include: resolve(dirname(fileURLToPath(import.meta.url)), './src/locales/**'),
-            runtimeOnly: false
-        })
-    ]
+const messages = {
+    en,
+    es
+}
+
+const i18n = createI18n({
+    legacy: false,
+    locale: 'en',
+    fallbackLocale: 'en',
+    messages
 })
+
+export default i18n

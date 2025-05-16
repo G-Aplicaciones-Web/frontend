@@ -1,0 +1,22 @@
+{
+  "navbar": {
+    "home": "Inicio",
+    "devices": "Dispositivos",
+    "profile_company": "Mi Perfil | Empresas",
+    "profile_technician": "Mi Perfil | Técnicos",
+    "logout": "Cerrar sesión",
+    "language_en": "EN",
+    "language_es": "ES"
+  },
+  "home": {
+    "welcome": "¡Hola de nuevo, bienvenido a EcoVolt!",
+    "savings_comparison_title": "Comparativa de Ahorro Energético",
+    "savings_comparison_text": "Has ahorrado un 30% de energía desde que te uniste a EcoVolt.",
+    "suggestions_title": "Sugerencias para Ahorrar Energía",
+    "suggestion_1": "Apaga los dispositivos cuando no los uses.",
+    "suggestion_2": "Programa mantenimiento para optimizar el consumo.",
+    "suggestion_3": "Usa dispositivos eficientes en energía.",
+    "top_consumers": "Dispositivos con Mayor Consumo",
+    "least_consumers": "Dispositivos con Menor Consumo"
+  }
+}

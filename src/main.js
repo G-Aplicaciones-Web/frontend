@@ -1,9 +1,19 @@
 import { createApp } from 'vue'
-import './style.css'
 import App from './App.vue'
-import PrimeVue from 'primevue/config';
+import router from './router/index.js'
+import i18n from './i18n'
 
-createApp(App).mount('#app')
-const app = createApp(App);
+import PrimeVue from 'primevue/config'
+import 'primevue/resources/themes/saga-green/theme.css'   // green theme per your color
+import 'primevue/resources/primevue.min.css'
+import 'primeicons/primeicons.css'
 
-app.use(PrimeVue);
+import './style.css'
+
+const app = createApp(App)
+
+app.use(router)
+app.use(i18n)
+app.use(PrimeVue)
+
+app.mount('#app')

@@ -1,0 +1,23 @@
+{
+  "navbar": {
+    "home": "Home",
+    "devices": "Devices",
+    "profile_company": "My Profile | Companies",
+    "profile_technician": "My Profile | Technicians",
+    "logout": "Log Out",
+    "language_en": "EN",
+    "language_es": "ES"
+  },
+  "home": {
+    "welcome": "Hello again, welcome to EcoVolt!",
+    "savings_comparison_title": "Energy Savings Comparison",
+    "savings_comparison_text": "You have saved 30% of energy since you joined EcoVolt.",
+    "suggestions_title": "Energy Saving Suggestions",
+    "suggestion_1": "Turn off devices when not in use.",
+    "suggestion_2": "Schedule maintenance to optimize consumption.",
+    "suggestion_3": "Use energy-efficient devices.",
+    "top_consumers": "Devices with Highest Consumption",
+    "least_consumers": "Devices with Lowest Consumption"
+}
+
+}
