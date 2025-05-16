@@ -18,5 +18,14 @@
     "suggestion_3": "Usa dispositivos eficientes en energía.",
     "top_consumers": "Dispositivos con Mayor Consumo",
     "least_consumers": "Dispositivos con Menor Consumo"
-  }
+  }, "devices": {
+  "title": "Dispositivos",
+  "connected": "Dispositivos Conectados",
+  "disconnected": "Dispositivos Desconectados",
+  "status_on": "Estado: Encendido",
+  "status_off": "Estado: Apagado",
+  "connect": "Conectar",
+  "disconnect": "Desconectar",
+  "change_success": "¡Se ha realizado el cambio exitosamente!"
+}
 }
