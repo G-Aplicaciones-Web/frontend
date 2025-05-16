@@ -1,9 +1,28 @@
 <template>
   <section class="devices-container">
-    <h1>{{ $t('devices.title') }}</h1>
+    <div class="devices-header">
+      <h1 class="devices-title">{{ $t('devices.title') }}</h1>
+      <div class="devices-summary">
+        <span class="summary-item connected">
+          <i class="pi pi-check-circle"></i>
+          {{ connectedDevices.length }} {{ $t('devices.connected') }}
+        </span>
+        <span class="summary-item disconnected">
+          <i class="pi pi-times-circle"></i>
+          {{ disconnectedDevices.length }} {{ $t('devices.disconnected') }}
+        </span>
+      </div>
+    </div>
+
     <div class="device-lists">
       <div class="device-list connected">
-        <h2>{{ $t('devices.connected') }}</h2>
+        <div class="list-header">
+          <h2>
+            <i class="pi pi-check-circle"></i>
+            {{ $t('devices.connected') }}
+          </h2>
+          <span class="badge">{{ connectedDevices.length }}</span>
+        </div>
         <ConnectedDevicesList
             :devices="connectedDevices"
             @disconnect="handleDisconnect"
@@ -11,7 +30,13 @@
       </div>
 
       <div class="device-list disconnected">
-        <h2>{{ $t('devices.disconnected') }}</h2>
+        <div class="list-header">
+          <h2>
+            <i class="pi pi-times-circle"></i>
+            {{ $t('devices.disconnected') }}
+          </h2>
+          <span class="badge">{{ disconnectedDevices.length }}</span>
+        </div>
         <DisconnectedDevicesList
             :devices="disconnectedDevices"
             @connect="handleConnect"
@@ -37,7 +62,9 @@ const devices = ref([
     type: 'HVAC',
     status: 'on',
     consumption: 120,
-    image: '/images/device-icons/ac.png'
+    image: '/images/ac.png',
+    location: 'Office Floor 2',
+    lastActive: '2 mins ago'
   },
   {
     id: 2,
@@ -45,7 +72,9 @@ const devices = ref([
     type: 'Kitchen',
     status: 'off',
     consumption: 95,
-    image: '/images/device-icons/oven.png'
+    image: '/images/oven.png',
+    location: 'Main Kitchen',
+    lastActive: '5 hours ago'
   },
   {
     id: 3,
@@ -53,7 +82,9 @@ const devices = ref([
     type: 'Lighting',
     status: 'on',
     consumption: 80,
-    image: '/images/device-icons/lighting.png'
+    image: '/images/lighting.png',
+    location: 'Reception Area',
+    lastActive: 'Just now'
   },
   {
     id: 4,
@@ -61,7 +92,9 @@ const devices = ref([
     type: 'Kitchen',
     status: 'off',
     consumption: 15,
-    image: '/images/device-icons/coffee.png'
+    image: '/images/coffee.png',
+    location: 'Break Room',
+    lastActive: '1 day ago'
   }
 ])
 
@@ -78,7 +111,8 @@ function handleConnect(deviceId) {
   if (device) {
     device.status = 'on'
     updateLists()
-    alert(t('devices.change_success'))
+    // Usar notificación toast en lugar de alert
+    console.log(t('devices.change_success'))
   }
 }
 
@@ -87,33 +121,122 @@ function handleDisconnect(deviceId) {
   if (device) {
     device.status = 'off'
     updateLists()
-    alert(t('devices.change_success'))
+    // Usar notificación toast en lugar de alert
+    console.log(t('devices.change_success'))
   }
 }
 </script>
 
 <style scoped>
 .devices-container {
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   font-family: 'Poppins', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.devices-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.devices-title {
+  color: #328e6e;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.devices-summary {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.summary-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.summary-item.connected {
+  background-color: rgba(76, 175, 80, 0.1);
+  color: #328e6e;
+}
+
+.summary-item.disconnected {
+  background-color: rgba(244, 67, 54, 0.1);
+  color: #e53935;
 }
 
 .device-lists {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 2rem;
-  justify-content: space-between;
 }
 
 .device-list {
-  flex: 1;
-  background: #f9f9f9;
-  padding: 1rem;
-  border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 1.5rem;
+  border: 1px solid #e9ecef;
 }
 
-.device-list h2 {
-  color: var(--main-green);
-  margin-bottom: 1rem;
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e9ecef;
+}
+
+.list-header h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #328e6e;
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.device-list.connected .list-header h2 {
+  color: #328e6e;
+}
+
+.device-list.disconnected .list-header h2 {
+  color: #547792;
+}
+
+.badge {
+  background-color: #f8f9fa;
+  color: #2c3e50;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .devices-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .device-lists {
+    grid-template-columns: 1fr;
+  }
+
+  .devices-summary {
+    width: 100%;
+    justify-content: space-between;
+  }
 }
 </style>

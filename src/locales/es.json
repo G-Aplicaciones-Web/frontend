@@ -2,8 +2,8 @@
   "navbar": {
     "home": "Inicio",
     "devices": "Dispositivos",
-    "profile_company": "Mi Perfil | Empresas",
-    "profile_technician": "Mi Perfil | Técnicos",
+    "profile_company": "Mi Perfil / Empresas",
+    "profile_technician": "Mi Perfil / Técnicos",
     "logout": "Cerrar sesión",
     "language_en": "EN",
     "language_es": "ES"
