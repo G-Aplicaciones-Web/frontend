@@ -27,8 +27,8 @@ const { t } = useI18n()
 
 const user = reactive({
   photo: '/images/profile/company-user.png',
-  username: 'company_user',
-  email: 'contact@company.com',
+  username: 'Los Rofi',
+  email: 'losrofi@enterprise.com',
   plan: 'ENTERPRISE',
   planDaysLeft: '1 year'
 })
