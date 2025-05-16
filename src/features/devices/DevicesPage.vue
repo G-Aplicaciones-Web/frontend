@@ -54,7 +54,7 @@ import DisconnectedDevicesList from './components/DisconnectedDevicesList.vue'
 
 const { t } = useI18n()
 
-// Mock data
+
 const devices = ref([
   {
     id: 1,
@@ -111,7 +111,7 @@ function handleConnect(deviceId) {
   if (device) {
     device.status = 'on'
     updateLists()
-    // Usar notificación toast en lugar de alert
+
     console.log(t('devices.change_success'))
   }
 }
@@ -121,7 +121,7 @@ function handleDisconnect(deviceId) {
   if (device) {
     device.status = 'off'
     updateLists()
-    // Usar notificación toast en lugar de alert
+
     console.log(t('devices.change_success'))
   }
 }
