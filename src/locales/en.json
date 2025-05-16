@@ -18,6 +18,16 @@
     "suggestion_3": "Use energy-efficient devices.",
     "top_consumers": "Devices with Highest Consumption",
     "least_consumers": "Devices with Lowest Consumption"
-}
+},
+  "devices": {
+    "title": "Devices",
+    "connected": "Connected Devices",
+    "disconnected": "Disconnected Devices",
+    "status_on": "Status: ON",
+    "status_off": "Status: OFF",
+    "connect": "Connect",
+    "disconnect": "Disconnect",
+    "change_success": "Change has been successfully made!"
+  }
 
 }
